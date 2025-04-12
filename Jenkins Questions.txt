@@ -1,0 +1,55 @@
+Jenkins Interview Questions:
+
+1. What is Jenkins and why is it used in DevOps?
+2. Explain the key features of Jenkins.
+3. What are Jenkins plugins, and how do they extend Jenkins functionality?
+4. How do you install Jenkins?
+5. What are the different ways to set up Jenkins?
+
+#Jenkins Pipeline and Job Configuration:
+
+6. What is a Jenkins Pipeline?
+7. What are the differences between Declarative and Scripted Pipelines in Jenkins?
+8. How do you configure a Jenkins job?
+9. Explain how you would create and use Jenkinsfiles.
+10. What is the difference between a Freestyle project and a Pipeline in Jenkins?
+11. How do you schedule a Jenkins job?
+
+#Jenkins Administration:
+
+12. How do you secure Jenkins?
+13. How do you manage users and roles in Jenkins?
+14. Explain how to backup and restore Jenkins configurations.
+15. What strategies would you use to scale Jenkins?
+
+#Integration and Automation:
+
+16. How do you integrate Jenkins with version control systems like Git?
+17. What are some common CI/CD tools that integrate with Jenkins?
+18. How do you automate tests with Jenkins?
+19. Describe how to set up a continuous deployment pipeline with Jenkins.
+20. How do you use Jenkins to deploy applications to different environments (e.g., dev, test, prod)?
+
+#Troubleshooting and Optimization:
+
+21. How do you monitor Jenkins and its jobs?
+22. What are some common issues you might encounter with Jenkins and how do you resolve them?
+23. How can you optimize Jenkins performance?
+24. What strategies would you use to handle long-running jobs in Jenkins?
+25. How do you handle failing Jenkins builds?
+
+#Advanced Jenkins Topics:
+
+26. Explain the use of Jenkins agents and how to configure them.
+27. What is the role of Blue Ocean in Jenkins?
+28. How do you use Jenkins for building Docker images?
+29. Describe how you can trigger Jenkins jobs remotely.
+30. How do you use Jenkins with Kubernetes for CI/CD?
+
+#Practical and Scenario-Based Questions:
+
+31. Describe a CI/CD pipeline you have implemented using Jenkins.
+32. How do you handle secrets and credentials in Jenkins?
+33. How would you migrate Jenkins jobs from one server to another?
+34. Explain a situation where you improved the CI/CD process using Jenkins.
+35. How do you manage dependencies in a Jenkins pipeline?
