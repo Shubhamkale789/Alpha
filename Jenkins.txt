@@ -1,0 +1,116 @@
+Jenkins=
+CICD(Continue Integration & Continue Delivery or Deployment)
+
+Install Jenkins on Ubuntu:
+     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/Jenkins.list > /dev/null
+sudo apt-get update
+ sudo apt-get install openjdk-17-jdk-headless
+sudo apt-get install Jenkins
+
+Install Jenkins on Linux:
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+sudo yum upgrade
+# Add required dependencies for the jenkins package
+sudo yum install -y java-17-amazon-corretto
+sudo yum install Jenkins
+sudo systemctl daemon-reload
+
+history:
+Jenkins is an open source automation server it helps automate the part of software development related to building ,testing ,deploying facility.
+Continuous integration continuous delivery it is server based system that run in serverlet containers such as Apache tomcat. it support version controlling tool like 
+git mercral, purpose etc.
+It excutes maven & gradal based project as well as shell script windows bash command.
+Jenkins has originally name as hadasen & it was rename in 2011 first release of Jenkins at 2nd Feb 2011.lincnse come under MIT, platform java
+
+create a simple job:
+dashboard > new Item > enter item name > project type(freestyle) > build step > add build step > execute shell > shell command > apply & save.
+building a job 
+we can build a Jenkins job with 6 diff way:
+1) Manual
+In this type of job we need to use Jenkins UI & we need choose particular job which we want to run you can see build now option apply button to run your particular job.
+2)trigger build remotely=
+for this type of build we need to set build trigger configuration when we are creating a job here we need to pass authentication token which can be anything any number
+to trigger build we need to heat below url 
+  JENKINS_URL/JOB/JOBNAME/build?token=TOKEN_NAME
+
+3) build after other project are build
+It will git trigger once a parent job build process is finish means job to will get run after job one get finish.
+consider you have 2 jobs named as job1 and job2 where job1 is getting trigger remotely Once a job1 build process finish job2 will get trigger
+here to achieve about scenario we need to configure job tools build trigger configuration as build after other project are build and mention
+job1 on which we need to keep watch.
+
+
+
+Build periodically:
+
+
+we can add multiple schedule for a job:
+for below two option that is 
+		core scm
+		GitHub hook trigger for git scm polling
+
+Integration of GitHub account with Jenkins server:
+step1: Generate Api token on Jenkins(click on profile then configure api token then add new token =>generate token)
+step2: Adding webhook to your project(Project => setting => webhooks => payloadurl(jenkins url +/github-webhooks/) => content type(application/json) =>update)
+if your get green tick marks if you webhooks successfully applied.
+
+
+
+using webhooks In a jenkins job:
+To use webhooks we need to create a job as a per below configuration
+Add New Item => Freestyle project =>source code management (git) => repository URL => add your project URL => branch(main) =>apply & save
+
+Note:
+Once you run your job you will fine your project source code inside /var/lib/jenkins/workspace/jobname
+
+GitHub hook trigger for git scm pooling:
+when Jenkins receive a GitHub push a hook ,GitHub plugging check to see whether the hook clam for GitHub repository which match be git repository 
+scm/gitsession of your job. it is match your job will get trigger.
+
+PollScm:
+This is Similar to build periodically but it will check to option 
+1)schedule:
+2)GitHub push hoop:
+
+CI-CD project on1:
+Deploying & web application with the help of ansible & Jenkins:
+	1) create 4 EC2 instance inside 4 vpc(developer machine, Jenkins machine, Ansible server, webserver)
+	2) Jenkins machine install Jenkins
+				yum install java* -y
+				yum install Jenkins -y
+				sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    				https://pkg.jenkins.io/redhat/jenkins.repo
+				sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+				sudo yum upgrade
+				# Add required dependencies for the jenkins package
+				yum install java
+				sudo yum install fontconfig java-17-openjdk
+				sudo yum install jenkins
+	3)Configure Ansible server:	
+				Install Ansible
+				yum install ansible -y
+			        ## create a group called web server inside /etc/ansible/hosts
+				[web]
+				private Ip(web)
+			
+	4)Configure web server:
+				yum install nginx -y
+				systemctl start nginx
+				systemctl status nginx
+			## create a password less connection between ansible & web server.
+			## create a password less connection between Jenkins & Ansible
+
+
+
+
+
+
+
+	
+			
